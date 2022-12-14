@@ -10,7 +10,7 @@ class SignInPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    SignInController _controller = SignInController();
+    SignInController _controller = Get.put(SignInController());
 
     return Scaffold(
       backgroundColor: ColorsConstant.backgroundColor,

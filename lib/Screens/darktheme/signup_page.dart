@@ -10,7 +10,7 @@ class SignUpPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    SignupController _controller = SignupController();
+    SignupController _controller = Get.put(SignupController());
 
     return Scaffold(
       backgroundColor: ColorsConstant.backgroundColor,
@@ -70,11 +70,9 @@ class SignUpPage extends StatelessWidget {
                           ),
                           child: TextButton(
                             onPressed: () {
-                              if (_controller
-                                      .userNameController.text.isEmpty &&
+                              if (_controller.userNameController.text.isEmpty &&
                                   _controller.emailController.text.isEmpty &&
-                                  _controller
-                                      .passwordController.text.isEmpty) {
+                                  _controller.passwordController.text.isEmpty) {
                                 Get.snackbar(
                                   "Error",
                                   "Please fill all fields",
